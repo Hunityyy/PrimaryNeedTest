@@ -362,6 +362,15 @@ function renderChart() {
     };
 
     new Chart(ctx, config);
+
+    // 添加下载功能
+    document.getElementById('download-btn').onclick = function() {
+        const link = document.createElement('a');
+        link.download = '测试结果雷达图.png';
+        // 为了下载时包含背景色，可以先将 canvas 转为数据 URL
+        link.href = document.getElementById('radarChart').toDataURL('image/png');
+        link.click();
+    };
 }
 
 initQuiz();
