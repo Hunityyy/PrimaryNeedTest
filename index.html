@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基本需求满足度测试</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>基本需求满足度测试</h1>
+            <p>了解你在不同维度下的需求现状与期望</p>
+        </header>
+
+        <main id="quiz-container">
+            <!-- 答题区域 -->
+            <div id="question-view">
+                <h2 id="dimension-title"></h2>
+                <div id="questions"></div>
+                <button id="next-btn">下一页</button>
+            </div>
+
+            <!-- 结果区域 -->
+            <div id="result-view" style="display: none;">
+                <h2>测试结果</h2>
+                <div class="chart-container">
+                    <canvas id="radarChart"></canvas>
+                </div>
+                <div id="chart-controls">
+                    <!-- 控制折线显示的复选框将在此生成 -->
+                </div>
+
+                <div class="quadrant-container">
+                    <h3>需求象限分析指南</h3>
+                    <table class="quadrant-table">
+                        <tr>
+                            <td>
+                                <strong>象限 1</strong><br>
+                                满足度：低 (0—2 分)<br>
+                                重要性：高 (8—10 分)<br><br>
+                                你今天感觉重要的需求得不到满足或很少得到满足。如何在你的生活中给分布在这个象限中的需求更多的空间？
+                            </td>
+                            <td>
+                                <strong>象限 2</strong><br>
+                                满足度：高 (8—10 分)<br>
+                                重要性：高 (8—10 分)<br><br>
+                                你感觉得到的需求在很大程度上或完全得到了满足。如果所有的需求都分布在这个象限内，那么就要恭喜你了！
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>象限 3</strong><br>
+                                满足度：低 (0—2 分)<br>
+                                重要性：低 (0—2 分)<br><br>
+                                在你看来，这些需求既没有得到满足，也不重要。这对你来说是完全可以接受的。也许你已经接受了这些需求不可能得到满足的现实，就像寓言中的狐狸认为吃不到的葡萄太酸一样。也有可能你已经忽略了这些需求。那么请考虑，是否需要通过满足这些需求来提高生活满意度。
+                            </td>
+                            <td>
+                                <strong>象限 4</strong><br>
+                                满足度：高 (8—10 分)<br>
+                                重要性：低 (0—2 分)<br><br>
+                                这些需求虽然得到了满足，但是这种满足感似乎并不重要。你认为现状可以保持不变。你拥有的东西可能在你看来自理所应当的，类似于呼吸的空气。但是，如果这些需求没有得到满足，情况会怎样呢？在这种情况下，对需求的重要性评估可能会发生变化。
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <button onclick="location.reload()">重新测试</button>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
